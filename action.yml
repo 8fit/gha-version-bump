@@ -1,0 +1,8 @@
+name: Automated Version Bump
+description: Automatically tag releases on "production" branch, and bump the version in package.json on "staging" (aka default) branch
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: chevron-up
+  color: blue

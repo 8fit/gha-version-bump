@@ -1,0 +1,29 @@
+name: Bump version
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  bump-version:
+    name: "Bump Version on master"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout source code"
+        uses: "actions/checkout@v2"
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+      - name: "fetch default branch"
+        run: git fetch origin ${{ github.repository.default_branch }}
+      - name: "cat package.json"
+        run: cat ./package.json
+      - name: "Push release tag, bump version on staging"
+        uses: "8fit/gha-version-bump@master"
+        with:
+          tag-prefix: ""
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+      - name: "cat package.json"
+        run: cat ./package.json

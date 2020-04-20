@@ -1,0 +1,31 @@
+{
+  "name": "gha-version-bump",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8fit/gha-version-bump.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/8fit/gha-version-bump/issues"
+  },
+  "homepage": "https://github.com/8fit/gha-version-bump#readme",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1",
+    "actions-toolkit": "^2.2.0",
+    "yargs": "^14.2.0"
+  },
+  "devDependencies": {
+    "jest": "^24.5.0",
+    "standard": "^14.3.1"
+  }
+}

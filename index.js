@@ -54,13 +54,9 @@ Toolkit.run(async tools => {
     const defaultBranch = github.context.payload.repository.default_branch;
     console.log(`checking out ${defaultBranch}`)
     await tools.runInWorkspace("git", ["checkout", defaultBranch]);
-    await tools.runInWorkspace("npm", [
-      "version",
-      "--allow-same-version=true",
-      "--git-tag-version=false",
-      "patch"
-    ]);
-
+    
+    // We've already bumped the version when running `getNewVersion`
+    
     await tools.runInWorkspace("git", [
       "commit",
       "-a",

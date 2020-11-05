@@ -25,6 +25,7 @@ COPY package*.json ./
 RUN apt-get update
 RUN apt-get -y install git
 
+RUN npm install -g npm@latest
 RUN npm ci --only=production
 
 
